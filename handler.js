@@ -1,5 +1,6 @@
 window.addEventListener('keydown', playSound);
 window.addEventListener('click', playSoundMouse);
+window.addEventListener('keyup', endWhiteAnimation);
 
 function playSound(e){
     //SOUND FUNCTIONALITY
@@ -7,17 +8,20 @@ function playSound(e){
     //console.log(audio);
 
     if(!audio) return;
-    audio.currentTime = 0.35;
+    audio.currentTime = 0.4;
     audio.play();
+    whiteAnimation(e);
 
+    /*
     //ANIMATION WHEN PRESSED
-    let key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-    console.log(key);
-    key.classList.add("white-pressed"); //NOT APPLYING PROPERLY
+    let divKey = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    let button = divKey.childNodes[1];
+    button.classList.add("white-pressed");
+*/
 }
 
 function playSoundMouse(e){
- /* WAS GOING TO USE A SWITCH SWATEMENT, 
+ /* WAS GOING TO USE A SMIPLE SWITCH SWATEMENT, 
     BUT FOUND A BETTER WAY TO TARGET USING THE EVENT OBJECT PROPERTY   
 
     console.log(`audio[data-key="${e.target.id}"]`);
@@ -33,7 +37,7 @@ function playSoundMouse(e){
     
     /**
      * 1. User clicks on a button and triggers the event
-     * 2. uses event's path property(which is an array)
+     * 2. uses event's DOM path property(which is an array)
      * 3. second element of that array is the parent node (which is the parent div)
      * 4. then it gets the "data-key" attribute (which is what we wanted)
      * 
@@ -48,3 +52,19 @@ function playSoundMouse(e){
 
 
 }
+
+function whiteAnimation(e){
+    //ANIMATION WHEN PRESSED
+    let divKey = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    let button = divKey.childNodes[1];
+    button.classList.add("white-pressed");
+}
+
+
+function endWhiteAnimation(e){
+    let divKey = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    let button = divKey.childNodes[1];
+    button.classList.remove("white-pressed");
+}
+
+
