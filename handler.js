@@ -5,19 +5,15 @@ window.addEventListener('keyup', endWhiteAnimation);
 function playSound(e){
     //SOUND FUNCTIONALITY
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    //console.log(audio);
+    console.log(e);
 
     if(!audio) return;
+
+    
     audio.currentTime = 0.4;
     audio.play();
     whiteAnimation(e);
 
-    /*
-    //ANIMATION WHEN PRESSED
-    let divKey = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-    let button = divKey.childNodes[1];
-    button.classList.add("white-pressed");
-*/
 }
 
 function playSoundMouse(e){
@@ -35,7 +31,7 @@ function playSoundMouse(e){
     }
 */
     
-    /**
+    /** NOTES ON THIS VARIABLE
      * 1. User clicks on a button and triggers the event
      * 2. uses event's DOM path property(which is an array)
      * 3. second element of that array is the parent node (which is the parent div)
@@ -43,7 +39,6 @@ function playSoundMouse(e){
      * 
      */
     let path = (e.path[1].getAttribute("data-key")); 
-
     let mouseAudio = document.querySelector(`audio[data-key="${path}"]`);
 
 
@@ -62,6 +57,7 @@ function whiteAnimation(e){
 
 
 function endWhiteAnimation(e){
+    //END ANIMATION FOR PRESSED KEY(S)
     let divKey = document.querySelector(`.key[data-key="${e.keyCode}"]`);
     let button = divKey.childNodes[1];
     button.classList.remove("white-pressed");

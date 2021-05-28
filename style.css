@@ -17,9 +17,9 @@ kbd{
 
 .keys{
     width: 100%;
-    height: 30vh;
+    height: 60vh;
     position: relative;
-    top: 70%;
+    top: 40%;
 
     display: flex;
     flex-direction: row;
@@ -52,4 +52,20 @@ kbd{
 .white-pressed{
     background: linear-gradient(180deg, rgba(88,88,88,1) 3%, rgba(255,255,248,1) 9%);
 
+}
+
+/*ADDING BLACK KEYS*/
+.black-keys{
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: 10% 10% 20% 10% 10% 10% ;
+    column-gap: 10%;
+
+    position: relative;
+    bottom: 20%;
+    left: 10%;
+
+    height: 40vh;
+    width: 100vw;
 }
