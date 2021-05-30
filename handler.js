@@ -5,7 +5,23 @@ window.addEventListener('keyup', endWhiteAnimation);
 function playSound(e){
     //SOUND FUNCTIONALITY
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    let blackAudio = null;
+
+    if(!audio) return; //If no 'audio' variable then stop and dont proceed (by returning nothing)
     console.log(e);
+
+    /**FOR BLACK KEY'S AUDIO
+     * Assigns a different key-code number
+     */
+    if(e.shiftKey == true && audio){
+     if(audio.getAttribute("data-key") == 67){
+        blackAudio = document.querySelector(`audio[data-key="49"]`);
+        blackAudio.play();
+     }
+
+
+
+    }
 
     if(!audio) return;
 
