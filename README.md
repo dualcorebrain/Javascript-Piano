@@ -1,7 +1,8 @@
 <h1> Simple Piano Project Made in Vanilla Javascript </h1>
-<h3> (Use the link on the side)</h3>
+<h3> (Link on the side)</h3>
 
 
+<h2>Updates and Aims</h2>
 <ul> 
     <li>- Currently non responsive (Some responsive functionalities due to the use of CSS FlexBox) </li>
     <li>- Black key's sounds provided by University of Iowa's Electronic Music Studios <a href = "http://theremin.music.uiowa.edu/MISpiano.html">[link]</a></li>
