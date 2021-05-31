@@ -22,31 +22,31 @@ function playSound(e){
      if(audio.getAttribute("data-key") == 67){
         blackAudio = document.querySelector(`audio[data-key="49"]`);
         blackAudio.play();
-        blackAnimation(e, 49);
+        blackAnimation(49);
      }
      else if(audio.getAttribute("data-key") == 68){
         blackAudio = document.querySelector(`audio[data-key="50"]`);
         blackAudio.play();
-        blackAnimation(e, 50);
+        blackAnimation(50);
 
      }
 
      else if(audio.getAttribute("data-key") == 70){
         blackAudio = document.querySelector(`audio[data-key="51"]`);
         blackAudio.play();
-        blackAnimation(e, 51);
+        blackAnimation(51);
      }
 
      else if(audio.getAttribute("data-key") == 71){
         blackAudio = document.querySelector(`audio[data-key="52"]`);
         blackAudio.play();
-        blackAnimation(e, 52);
+        blackAnimation(52);
      }
 
      else if(audio.getAttribute("data-key") == 65){
         blackAudio = document.querySelector(`audio[data-key="53"]`);
         blackAudio.play();
-        blackAnimation(e, 53);
+        blackAnimation(C53);
      }
 
     }else{
@@ -82,7 +82,7 @@ function playSoundMouse(e){
      * This has nothing to do with 'faking' key-codes we did for keyboard input only
      */
     let path = (e.path[1].getAttribute("data-key")); 
-    console.log(path);
+    //console.log(path);
     let mouseAudio = document.querySelector(`audio[data-key="${path}"]`);
 
 
@@ -107,16 +107,17 @@ function endWhiteAnimation(e){
 }
 
 
+/**
+ * NEED TO ADD KEYBOARD ANIMATIONS FOR BLACK KEYS
+ *  
+ */
+
 function blackAnimation(fakeBlackNumberKey){
     let blackDivkey = document.querySelector(`.key[data-key='${fakeBlackNumberKey}']`);
     let blackButton = blackDivkey.childNodes[1];
     blackButton.classList.add("black-pressed");
 
-    endBlackAnimation(blackButton);
 }
 
 function endBlackAnimation(e){
-    let blackDivkey = document.querySelector(`.key[data-key='${fakeBlackNumberKey}']`);
-    let blackButton = blackDivkey.childNodes[1];
-    
 }
