@@ -1,3 +1,13 @@
+/**How this works
+ * 1. Adds event listener for 'keyup' 'keyDown'
+ */
+
+
+
+
+
+
+
 window.addEventListener('keydown', playSound);
 window.addEventListener('keyup', endWhiteAnimation);
 
@@ -22,38 +32,33 @@ function playSound(e){
      if(audio.getAttribute("data-key") == 67){
         blackAudio = document.querySelector(`audio[data-key="49"]`);
         blackAudio.play();
-        blackAnimation(49);
+        pressedAnimation(e);
      }
      else if(audio.getAttribute("data-key") == 68){
         blackAudio = document.querySelector(`audio[data-key="50"]`);
         blackAudio.play();
-        blackAnimation(50);
-
+        pressedAnimation(e);
      }
 
      else if(audio.getAttribute("data-key") == 70){
         blackAudio = document.querySelector(`audio[data-key="51"]`);
         blackAudio.play();
-        blackAnimation(51);
-     }
+        pressedAnimation(e);     }
 
      else if(audio.getAttribute("data-key") == 71){
         blackAudio = document.querySelector(`audio[data-key="52"]`);
         blackAudio.play();
-        blackAnimation(52);
-     }
+        pressedAnimation(e);     }
 
      else if(audio.getAttribute("data-key") == 65){
         blackAudio = document.querySelector(`audio[data-key="53"]`);
         blackAudio.play();
-        blackAnimation(C53);
-     }
+        pressedAnimation(e);     }
 
     }else{
         audio.currentTime = 0.4;
         audio.play();
-        whiteAnimation(e);
-     }
+        pressedAnimation(e);     }
 }
 
 
@@ -91,19 +96,94 @@ function playSoundMouse(e){
 }
 
 
-function whiteAnimation(e){
+function pressedAnimation(e){
     //ANIMATION WHEN PRESSED
-    let divKey = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-    let button = divKey.childNodes[1];
-    button.classList.add("white-pressed");
+
+    console.log(e);
+
+    if(e.keyCode==67 && e.shiftKey == true){
+            let blackDivKey = document.querySelector(`.key[data-key="49"]`);
+            console.log(blackDivKey);
+            blackDivKey.childNodes[1].classList.add("black-pressed");
+        }
+        else if(e.keyCode==68 && e.shiftKey == true){
+            let blackDivKey = document.querySelector(`.key[data-key="50"]`);
+            console.log(blackDivKey);
+            blackDivKey.childNodes[1].classList.add("black-pressed");
+        }
+        else if(e.keyCode==70 && e.shiftKey == true){
+            let blackDivKey = document.querySelector(`.key[data-key="51"]`);
+            console.log(blackDivKey);
+            blackDivKey.childNodes[1].classList.add("black-pressed");
+        }
+        else if(e.keyCode==71 && e.shiftKey == true){
+            let blackDivKey = document.querySelector(`.key[data-key="52"]`);
+            console.log(blackDivKey);
+            blackDivKey.childNodes[1].classList.add("black-pressed");
+        }
+        else if(e.keyCode==65 && e.shiftKey == true){
+            let blackDivKey = document.querySelector(`.key[data-key="53"]`);
+            console.log(blackDivKey);
+            blackDivKey.childNodes[1].classList.add("black-pressed");
+
+    }else{      //If no shiftKey is held then a white key is pressed
+        let divKey = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+        //console.log(divKey);
+
+
+        let button = divKey.childNodes[1];
+        button.classList.add("white-pressed");
+    }
 }
 
 
 function endWhiteAnimation(e){
     //END ANIMATION FOR PRESSED KEY(S)
+
+    if(e.keyCode==67 && e.shiftKey == true){
+        let blackDivKey = document.querySelector(`.key[data-key="49"]`);
+        console.log(blackDivKey);
+        blackDivKey.childNodes[1].classList.remove("black-pressed");
+    }
+    else if(e.keyCode==68 && e.shiftKey == true){
+        let blackDivKey = document.querySelector(`.key[data-key="50"]`);
+        console.log(blackDivKey);
+        blackDivKey.childNodes[1].classList.remove("black-pressed");
+    }
+    else if(e.keyCode==70 && e.shiftKey == true){
+        let blackDivKey = document.querySelector(`.key[data-key="51"]`);
+        console.log(blackDivKey);
+        blackDivKey.childNodes[1].classList.remove("black-pressed");
+    }
+    else if(e.keyCode==71 && e.shiftKey == true){
+        let blackDivKey = document.querySelector(`.key[data-key="52"]`);
+        console.log(blackDivKey);
+        blackDivKey.childNodes[1].classList.remove("black-pressed");
+    }
+    else if(e.keyCode==65 && e.shiftKey == true){
+        let blackDivKey = document.querySelector(`.key[data-key="53"]`);
+        console.log(blackDivKey);
+        blackDivKey.childNodes[1].classList.remove("black-pressed");
+
+}else{      //If no shiftKey is held then a white key is pressed
     let divKey = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    //console.log(divKey);
+
+
     let button = divKey.childNodes[1];
     button.classList.remove("white-pressed");
+}
+
+
+
+
+
+
+/*    let divKey = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    let button = divKey.childNodes[1];
+    button.classList.remove("white-pressed");
+
+    */
 }
 
 
@@ -112,12 +192,29 @@ function endWhiteAnimation(e){
  *  
  */
 
+
+ function blackAnimation(e){
+  /*  let blackDivKey = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    console.log(e);
+
+    if(e.keyCode == 67){
+        let blackDivKey = document.querySelector(`.key[data-key="49"]`);
+        blackDivKey.childNodes[1].classList.add("black-pressed");
+    }
+
+    let blackButton = blackDivKey.childNodes[1];
+    blackButton.classList.add("black-pressed");
+*/
+}
+
+/*
 function blackAnimation(fakeBlackNumberKey){
     let blackDivkey = document.querySelector(`.key[data-key='${fakeBlackNumberKey}']`);
     let blackButton = blackDivkey.childNodes[1];
     blackButton.classList.add("black-pressed");
 
 }
-
+*/
 function endBlackAnimation(e){
+    //console.log("EndBlackAnimation fired")
 }
