@@ -9,7 +9,7 @@ body{
     height: 100vh;
 }
 
-/*Hide this HTML element, added the letters to the <button> elements directly*/
+/*Hides this HTML element, added the letters to the <button> elements directly*/
 kbd{
     visibility: hidden;
     position: relative;
