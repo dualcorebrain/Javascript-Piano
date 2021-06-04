@@ -62,7 +62,7 @@
 window.addEventListener('keydown', playSound);
 window.addEventListener('keyup', endPressedAnimation);
 
-window.addEventListener('mousedown', playSoundMouse);
+window.addEventListener('click', playSoundMouse);
 //window.addEventListener('mouseup', endBlackAnimation);  NOT NEEDED 
 
 
@@ -79,41 +79,41 @@ function playSound(e){
      * If shiftKey was not pressed then a white key has been pressed and move to the 'else' statement
      * Assigns a different key-code number since a black keys has been pressed (key-codes[49-51] are first 5 numbers on the keyboard)
      */
-    if(e.shiftKey == true && audio){
+    if(e.shiftKey  && audio){
         if(audio.getAttribute("data-key") == 67){
             blackAudio = document.querySelector(`audio[data-key="49"]`);
-            audio.currentTime = 0.4;
+            blackAudio.currentTime = 0;
             blackAudio.play();
             pressedAnimation(e);
         }
         else if(audio.getAttribute("data-key") == 68){
             blackAudio = document.querySelector(`audio[data-key="50"]`);
-            audio.currentTime = 0.4;
+            blackAudio.currentTime = 0;
             blackAudio.play();
             pressedAnimation(e);
         }
 
         else if(audio.getAttribute("data-key") == 70){
             blackAudio = document.querySelector(`audio[data-key="51"]`);
-            audio.currentTime = 0.4;
+            blackAudio.currentTime = 0;
             blackAudio.play();
             pressedAnimation(e);     }
 
         else if(audio.getAttribute("data-key") == 71){
             blackAudio = document.querySelector(`audio[data-key="52"]`);
-            audio.currentTime = 0.4;
+            blackAudio.currentTime = 0;
             blackAudio.play();
             pressedAnimation(e);     }
 
         else if(audio.getAttribute("data-key") == 65){
             blackAudio = document.querySelector(`audio[data-key="53"]`);
-            audio.currentTime = 0.4;
+            blackAudio.currentTime = 0;
             blackAudio.play();
             pressedAnimation(e);     }
 
     }
     else{
-        audio.currentTime = 0.4;
+        audio.currentTime = 0;
         audio.play();
         pressedAnimation(e);     }
 }
@@ -148,7 +148,7 @@ function playSoundMouse(e){
     let mouseAudio = document.querySelector(`audio[data-key="${path}"]`);
 
 
-    mouseAudio.currentTime = 0.35;
+    mouseAudio.currentTime = 0;
     mouseAudio.play();
 }
 
@@ -156,39 +156,37 @@ function playSoundMouse(e){
 function pressedAnimation(e){
     //ANIMATION WHEN PRESSED
 
-    console.log(e);
-
     if(e.keyCode==67 && e.shiftKey == true){
             let blackDivKey = document.querySelector(`.key[data-key="49"]`);
-            console.log(blackDivKey);
+            //console.log(blackDivKey);
             blackDivKey.childNodes[1].classList.add("black-pressed");
         }
         else if(e.keyCode==68 && e.shiftKey == true){
             let blackDivKey = document.querySelector(`.key[data-key="50"]`);
-            console.log(blackDivKey);
+            //console.log(blackDivKey);
             blackDivKey.childNodes[1].classList.add("black-pressed");
         }
         else if(e.keyCode==70 && e.shiftKey == true){
             let blackDivKey = document.querySelector(`.key[data-key="51"]`);
-            console.log(blackDivKey);
+            //console.log(blackDivKey);
             blackDivKey.childNodes[1].classList.add("black-pressed");
         }
         else if(e.keyCode==71 && e.shiftKey == true){
             let blackDivKey = document.querySelector(`.key[data-key="52"]`);
-            console.log(blackDivKey);
+            //console.log(blackDivKey);
             blackDivKey.childNodes[1].classList.add("black-pressed");
         }
         else if(e.keyCode==65 && e.shiftKey == true){
             let blackDivKey = document.querySelector(`.key[data-key="53"]`);
-            console.log(blackDivKey);
+            //console.log(blackDivKey);
             blackDivKey.childNodes[1].classList.add("black-pressed");
 
-        //If no shiftKey is held then a white key is pressed and the final thing to do if no 'else-if' matches
-        }else{     
+        //If no shiftKey is held then a white key must have been pressed and the final thing to do if no 'else-if' matches
+        }else{
             let divKey = document.querySelector(`.key[data-key="${e.keyCode}"]`);
             let button = divKey.childNodes[1];
             button.classList.add("white-pressed");
-        }
+        } 
 }
 
 
@@ -197,27 +195,27 @@ function endPressedAnimation(e){
 
     if(e.keyCode==67 && e.shiftKey == true){
             let blackDivKey = document.querySelector(`.key[data-key="49"]`);
-            console.log(blackDivKey);
+            //console.log(blackDivKey);
             blackDivKey.childNodes[1].classList.remove("black-pressed");
         }
         else if(e.keyCode==68 && e.shiftKey == true){
             let blackDivKey = document.querySelector(`.key[data-key="50"]`);
-            console.log(blackDivKey);
+            //console.log(blackDivKey);
             blackDivKey.childNodes[1].classList.remove("black-pressed");
         }
         else if(e.keyCode==70 && e.shiftKey == true){
             let blackDivKey = document.querySelector(`.key[data-key="51"]`);
-            console.log(blackDivKey);
+            //console.log(blackDivKey);
             blackDivKey.childNodes[1].classList.remove("black-pressed");
         }
         else if(e.keyCode==71 && e.shiftKey == true){
             let blackDivKey = document.querySelector(`.key[data-key="52"]`);
-            console.log(blackDivKey);
+            //console.log(blackDivKey);
             blackDivKey.childNodes[1].classList.remove("black-pressed");
         }
         else if(e.keyCode==65 && e.shiftKey == true){
             let blackDivKey = document.querySelector(`.key[data-key="53"]`);
-            console.log(blackDivKey);
+            //console.log(blackDivKey);
             blackDivKey.childNodes[1].classList.remove("black-pressed");
          }
         //If no shiftKey is held then a white key is pressed and the final thing to do if no 'else-if' matches
