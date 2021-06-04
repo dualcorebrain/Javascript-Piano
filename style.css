@@ -125,3 +125,27 @@ kbd{
     position: relative;
     right: 21%;
 }
+
+
+
+/*INSTRUCTIONS*/
+
+#instructions-container{
+    z-index: 2;
+    background: black;
+    position: relative;    
+    bottom: 100%;
+    width: 40%;
+}
+
+h2, h4{
+    color: rgb(255, 255, 255);
+}
+
+h2{
+    margin: 3%;
+}
+
+h4{
+    margin: 3% 3%;
+}

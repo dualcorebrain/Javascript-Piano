@@ -20,5 +20,6 @@
 <br>
 <h2>Resources</h2>
 <ul>
-    <li>- University of Iowa's Electronic Music Studios provides sounds free of use, if you want to make somehting similar but dont have a piano <a href = "http://theremin.music.uiowa.edu/MISpiano.html">[link]</a> </li>
+    <li>- University of Iowa's Electronic Music Studios provides sounds free of use, if you want to make somehting similar but dont have a piano <a href = "http://theremin.music.uiowa.edu/MISpiano.html">[link]
+    </a> </li>
 </ul>
