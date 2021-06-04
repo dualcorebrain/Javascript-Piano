@@ -47,22 +47,8 @@
         * - then it proceeds to play that HTML <audio> element
         * - NOTE- If confused use console.log one by one on the 'path' element
         * - NOTE- No animation functions are called when piano's key is clicked. Animations are only when piano is played keyboard inputs
-        * - NOTE- With mouse all animations that you see are handled using CSS
-    
-        
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-*
-* 
-*  
- * }
+        * - NOTE- With mouse all animations that you see are handled using CSS  
+ * 
  * 
  * 
  */
