@@ -8,7 +8,6 @@
     <li>- Piano sounds directly from my Yamaha-P45 (reverb = +1, sound-stage = hall-1) </li>
     <li>- Some responsive functionalities due to the use of CSS FlexBox </li>
     <br>
-    <li>- University of Iowa's Electronic Music Studios provides sounds free of use, if you want to make somehting similar but dont have a piano <a href = "http://theremin.music.uiowa.edu/MISpiano.html">[link]</a></li>
 </ul>
 
 <br>
